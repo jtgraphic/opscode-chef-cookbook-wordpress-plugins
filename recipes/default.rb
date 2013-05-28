@@ -7,7 +7,7 @@ if node['wordpress']['plugins'] then
       mode "0644"
     end
 
-    execute "unzip -u #{Chef::Config[:file_cache_path]}/#{name}.zip -d #{node['wordpress']['dir']}/wp-content/plugins/" do
+    execute "unzip -fuo #{Chef::Config[:file_cache_path]}/#{name}.zip -d #{node['wordpress']['dir']}/wp-content/plugins/" do
       user "ubuntu"
     end
   end
